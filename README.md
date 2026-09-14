@@ -1,6 +1,6 @@
 # Introduction
 
-This is a Java client for Archive-It's API. It enables you to query seeds, collections, WARC file metadata and account settings. You can either use it with your own Archive-It credentials to gain access to your data, or without credentials to query public data.
+This is a Java client for Archive-It's API. It enables you to query seeds, collections, crawl jobs, WARC file metadata, account settings and many more. You can either use it with your own Archive-It credentials to gain access to your data, or without credentials to query public data.
 
 # Usage
 
@@ -27,6 +27,7 @@ The API functionalities of the client are divided into ''services''. Each servic
 * `AuthenticationService`
 * `AccountService`
 * `WarcService`
+* `CrawlService`
 
 Here is an example of getting the collection with ID `123` using the `CollectionService`:
 

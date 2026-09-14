@@ -10,6 +10,7 @@ import lu.bnl.archiveit.client.api.auth.AuthorizationProvider;
 import lu.bnl.archiveit.client.api.services.AccountService;
 import lu.bnl.archiveit.client.api.services.AuthenticationService;
 import lu.bnl.archiveit.client.api.services.CollectionService;
+import lu.bnl.archiveit.client.api.services.CrawlService;
 import lu.bnl.archiveit.client.api.services.SeedService;
 import lu.bnl.archiveit.client.api.services.WarcService;
 import lu.bnl.archiveit.client.exceptions.ArchiveItApiException;
@@ -30,6 +31,7 @@ public class ArchiveitClient implements AuthorizationProvider
 	private AccountService accountService;
 	private AuthenticationService authenticationService;
 	private WarcService warcService;
+	private CrawlService crawlService;
 	
 	/**
 	 * The default constructor. This will connect to Archive-It *WITHOUT* authentication. Only
@@ -65,6 +67,7 @@ public class ArchiveitClient implements AuthorizationProvider
 		this.accountService = new AccountService(this);
 		this.authenticationService = new AuthenticationService(this);
 		this.warcService = new WarcService(this);
+		this.crawlService = new CrawlService(this);
 	}
 	
 	/**
@@ -96,6 +99,11 @@ public class ArchiveitClient implements AuthorizationProvider
 	public WarcService getWarcService() 
 	{
 		return warcService;
+	}
+	
+	public CrawlService getCrawlService() 
+	{
+		return crawlService;
 	}
 
 	@Override
